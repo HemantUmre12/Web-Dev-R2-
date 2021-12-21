@@ -1,0 +1,240 @@
+/*
+=============== 
+Fonts
+===============
+*/ 
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  --theme: rgb(250, 98, 10);
+  /* linear-gradient/background color */
+  --bk-primary:  hsl(212, 33%, 89%);
+  --bk-secondary: hsl(210, 36%, 96%);
+  /* font-color */
+  --primary-color: hsl(205, 86%, 17%);
+  --secondary-color: hsl(205, 77%, 27%);
+  /* font */
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: 'Poppins', sans-serif;
+  /* others */
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  --dark-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
+  text-shadow: var(--light-shadow);
+  font-weight: normal;
+  letter-spacing: var(--spacing);
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h4 {
+  color: var(--secondary-color);
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  font-family: var(--ff-secondary);
+}
+h1 {
+  text-shadow: var(--dark-shadow);
+  font-size: 3.75rem;
+}
+h2 {
+  font-size: 2.25rem;
+}
+h3 {
+  font-size: 1.50rem;
+}
+h4 {
+  font-size: 1rem;
+}
+
+/*
+=============== 
+Styling 
+===============
+*/
+
+.container {
+  display: flex;
+}
+
+.left {
+  background-color: var(--bk-primary);
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.right {
+  background-color: var(--bk-secondary);
+  padding-left: 3rem;
+  padding-right: 2rem;
+}
+
+.section {
+  margin: 2rem 0;
+}
+
+.profile-picture {
+  height: 19rem;
+  background-image: url(./png/profile-pic.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: var(--theme);
+  border-radius: 0rem;
+  filter: grayscale(.8);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.profile-picture:hover {
+  border-radius: 1rem;
+  transform: scale(0.9);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  filter: grayscale(0);
+}
+
+.skills > span {
+  display: inline-block;
+  color: white;
+  margin: 0.25rem;
+  padding: .25rem;
+  background-color: var(--theme);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.skills > span:hover {
+  box-shadow: var(--dark-shadow);
+  background-color: white;
+  color: var(--theme);
+}
+
+.links {
+  margin:auto;
+  text-align: center;
+}
+
+.links > a {
+  display: inline-block;
+  margin: 0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: all 400ms ease-out;
+}
+
+.links > a:hover {
+  transform: scale(1.4);
+}
+
+.instagram {
+  background-image: url(.//png/instagram.png);
+}
+.linkedin {
+  background-image: url(.//png/linkedin.png);
+}
+.twitter {
+  background-image: url(.//png/twitter.png);
+}
+.github {
+  background-image: url(.//png/github.png);
+}
+
+.change-color {
+  color: var(--theme);
+}
+
+.ui-designer {
+  display: inline-block;
+  border-top: .25rem solid var(--theme);
+  letter-spacing: 0.4rem;
+}
+
+/*
+=============== 
+! Small Screens 
+===============
+*/
+
+/*
+=============== 
+Tablets 
+===============
+*/
+
+@media screen and (max-width: 800px) {
+  * {
+    font-size: 13px;
+  }
+  .container {
+    min-height: 100vh;
+  }
+}
+
+/*
+=============== 
+Mobiles 
+===============
+*/
+
+@media screen and (max-width: 550px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+}
+
+/*
+=============== 
+Max Width
+===============
+*/
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin: auto;
+    width: 1200px;
+  }
+}
+
